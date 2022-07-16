@@ -1,0 +1,12 @@
+<ul class="book-list">
+  <li *ngFor="let b of books">
+    <!--BS--><div>
+      <img *ngIf="b.thumbnailUrl" [src]="b.thumbnailUrl" alt="Cover">
+      <div class="overview">
+        <h2>{{ b.title }}</h2>
+        <h3 *ngIf="b.subtitle">{{ b.subtitle }}</h3>
+        <div>ISBN {{ b.isbn }}</div>
+      </div>
+    </div><!--BE-->
+  </li>
+</ul>

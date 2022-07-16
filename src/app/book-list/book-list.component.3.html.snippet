@@ -1,0 +1,5 @@
+<div class="authors">
+  <ng-container *ngFor="let author of b.authors; last as l">
+    {{ author }}<ng-container *ngIf="!l">, </ng-container>
+  </ng-container>
+</div>
