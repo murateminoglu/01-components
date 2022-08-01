@@ -1,5 +1,7 @@
-<div class="authors">
-  <ng-container *ngFor="let author of b.authors; last as l">
-    {{ author }}<ng-container *ngIf="!l">, </ng-container>
-  </ng-container>
-</div>
+<h1>Books</h1>
+<ul class="book-list">
+  <li *ngFor="let book of books"><!-- ... --></li>
+  <!--BS--><li *ngIf="!books.length">
+    No books available.
+  </li><!--BE-->
+</ul>

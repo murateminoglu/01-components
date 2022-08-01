@@ -1,12 +1,16 @@
+<h1>Books</h1>
 <ul class="book-list">
-  <li *ngFor="let b of books">
-    <!--BS--><div>
-      <img *ngIf="b.thumbnailUrl" [src]="b.thumbnailUrl" alt="Cover">
-      <div class="overview">
-        <h2>{{ b.title }}</h2>
-        <h3 *ngIf="b.subtitle">{{ b.subtitle }}</h3>
-        <div>ISBN {{ b.isbn }}</div>
-      </div>
-    </div><!--BE-->
+  <li *ngFor="let book of books">
+    <!--BS--><img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="Cover">
+    <h2>{{ book.title }}</h2>
+    <p role="doc-subtitle" *ngIf="book.subtitle">
+      {{ book.subtitle }}
+    </p>
+    <ul class="comma-list">
+      <li *ngFor="let author of book.authors">
+      {{ author }}
+    </li>
+    </ul>
+    <div>ISBN {{ book.isbn }}</div><!--BE-->
   </li>
 </ul>
